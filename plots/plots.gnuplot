@@ -67,6 +67,26 @@ plot t(x, 1, vmax_nuk, t_to_vmax_nuk, t_wu_nuk) t 'Nuk 100%' ls 1,  \
      t(x, 1, vmax_hyp, t_to_vmax_hyp, t_wu_hyp) t 'Hyp 100%' ls 7, \
      4.5 t 'Gty' ls 10
 
+set output 'vergleich-flugzeiten-galaintern.png'
+
+plot t(x, 1, vmax_nuk, t_to_vmax_nuk, t_wu_nuk) t 'Nuk 100%' ls 1,  \
+     t(x, 1.3, vmax_nuk, t_to_vmax_nuk, t_wu_nuk) t 'Nuk 130%' ls 2, \
+     t(x, 1.6, vmax_nuk, t_to_vmax_nuk, t_wu_nuk) t 'Nuk 160%' ls 3, \
+     t(x, 1, vmax_ion, t_to_vmax_ion, t_wu_ion) t 'Ion 100%' ls 4, \
+     t(x, 1.3, vmax_ion, t_to_vmax_ion, t_wu_ion) t 'Ion 130%' ls 5, \
+     t(x, 1.6, vmax_ion, t_to_vmax_ion, t_wu_ion) t 'Ion 160%' ls 6, \
+     t(x, 1, vmax_hyp, t_to_vmax_hyp, t_wu_hyp) t 'Hyp 100%' ls 7, \
+     4.5 t 'Gty' ls 10, \
+     'flugzeiten-galaintern.txt' using 1:2 t 'Nuk 100% PHP' ls 1, \
+     'flugzeiten-galaintern.txt' using 1:3 t 'Nuk 130% PHP' ls 2, \
+     'flugzeiten-galaintern.txt' using 1:4 t 'Nuk 160% PHP' ls 3, \
+     'flugzeiten-galaintern.txt' using 1:5 t 'Ion 160% PHP' ls 4, \
+     'flugzeiten-galaintern.txt' using 1:6 t 'Ion 130% PHP' ls 5, \
+     'flugzeiten-galaintern.txt' using 1:7 t 'Ion 160% PHP' ls 6, \
+     'flugzeiten-galaintern.txt' using 1:8 t 'Hyp 100% PHP' ls 7, \
+     'flugzeiten-galaintern.txt' using 1:9 t 'Gty 100% PHP' ls 10
+
+
 set title 'Flugzeiten außerhalb einer Galaxie'
 set xrange [1:5000]
 set xtics 500
@@ -78,6 +98,16 @@ plot t(x, 1, vmax_hyp, t_to_vmax_hyp, t_wu_hyp) t 'Hyp 100%' ls 7, \
      t(x, 1.6, vmax_hyp, t_to_vmax_hyp, t_wu_hyp) t 'Hyp 160%' ls 9, \
      4.5 t 'Gty' ls 10
 
+set output 'vergleich-flugzeiten-galaextern.png'
+
+plot t(x, 1, vmax_hyp, t_to_vmax_hyp, t_wu_hyp) t 'Hyp 100%' ls 7, \
+     t(x, 1.3, vmax_hyp, t_to_vmax_hyp, t_wu_hyp) t 'Hyp 130%' ls 8, \
+     t(x, 1.6, vmax_hyp, t_to_vmax_hyp, t_wu_hyp) t 'Hyp 160%' ls 9, \
+     4.5 t 'Gty' ls 10, \
+     'flugzeiten-galaextern.txt' using 1:2 t 'Hyp 100% PHP' ls 7, \
+     'flugzeiten-galaextern.txt' using 1:3 t 'Hyp 130% PHP' ls 8, \
+     'flugzeiten-galaextern.txt' using 1:4 t 'Hyp 160% PHP' ls 9, \
+     'flugzeiten-galaextern.txt' using 1:5 t 'Gty 100% PHP' ls 10
 
 set title 'Treibstoffverbrauch innerhalb einer Galaxie'
 set xrange [1:100]
@@ -97,6 +127,23 @@ plot verbrauch(x, 1, vmax_nuk, t_to_vmax_nuk, verbrauch_nuk_max, 0) t 'Nuk 100%'
      verbrauch(x, 1.6, vmax_ion, t_to_vmax_ion, verbrauch_ion_max, 0) t 'Ion 160%' ls 6, \
      verbrauch(x, 1, vmax_hyp, t_to_vmax_hyp, verbrauch_hyp_max, verbrauch_hyp_su) t 'Hyp 100%' ls 7
 
+set output 'vergleich-verbrauch-galaintern.png'
+
+plot verbrauch(x, 1, vmax_nuk, t_to_vmax_nuk, verbrauch_nuk_max, 0) t 'Nuk 100%' ls 1,  \
+     verbrauch(x, 1.3, vmax_nuk, t_to_vmax_nuk, verbrauch_nuk_max, 0) t 'Nuk 130%' ls 2, \
+     verbrauch(x, 1.6, vmax_nuk, t_to_vmax_nuk, verbrauch_nuk_max, 0) t 'Nuk 160%' ls 3, \
+     verbrauch(x, 1, vmax_ion, t_to_vmax_ion, verbrauch_ion_max, 0) t 'Ion 100%' ls 4, \
+     verbrauch(x, 1.3, vmax_ion, t_to_vmax_ion, verbrauch_ion_max, 0) t 'Ion 130%' ls 5, \
+     verbrauch(x, 1.6, vmax_ion, t_to_vmax_ion, verbrauch_ion_max, 0) t 'Ion 160%' ls 6, \
+     verbrauch(x, 1, vmax_hyp, t_to_vmax_hyp, verbrauch_hyp_max, verbrauch_hyp_su) t 'Hyp 100%' ls 7, \
+     'verbrauch-galaintern.txt' using 1:2 t 'Nuk 100% PHP' ls 1, \
+     'verbrauch-galaintern.txt' using 1:3 t 'Nuk 130% PHP' ls 2, \
+     'verbrauch-galaintern.txt' using 1:4 t 'Nuk 160% PHP' ls 3, \
+     'verbrauch-galaintern.txt' using 1:5 t 'Ion 100% PHP' ls 4, \
+     'verbrauch-galaintern.txt' using 1:6 t 'Ion 130% PHP' ls 5, \
+     'verbrauch-galaintern.txt' using 1:7 t 'Ion 160% PHP' ls 6, \
+     'verbrauch-galaintern.txt' using 1:8 t 'Hyp 100% PHP' ls 7
+
 set xrange [1:5000]
 set xtics 500
 set yrange [0:3000]
@@ -110,3 +157,14 @@ plot \
      1000 t 'Gty' ls 10
 
 
+set output 'vergleich-verbrauch-galaextern.png'
+
+plot \
+     verbrauch(x, 1, vmax_hyp, t_to_vmax_hyp, verbrauch_hyp_max, verbrauch_hyp_su) t 'Hyp 100%' ls 7, \
+     verbrauch(x, 1.3, vmax_hyp, t_to_vmax_hyp, verbrauch_hyp_max, verbrauch_hyp_su) t 'Hyp 130%' ls 8, \
+     verbrauch(x, 1.6, vmax_hyp, t_to_vmax_hyp, verbrauch_hyp_max, verbrauch_hyp_su) t 'Hyp 160%' ls 9, \
+     1000 t 'Gty' ls 10, \
+     'verbrauch-galaextern.txt' using 1:2 t 'Hyp 100% PHP' ls 7, \
+     'verbrauch-galaextern.txt' using 1:3 t 'Hyp 130% PHP' ls 8, \
+     'verbrauch-galaextern.txt' using 1:4 t 'Hyp 160% PHP' ls 9, \
+     'verbrauch-galaextern.txt' using 1:5 t 'Gty 100% PHP' ls 10
