@@ -88,9 +88,9 @@ plot t(x, 1, vmax_nuk, t_to_vmax_nuk, t_wu_nuk) t 'Nuk 100%' ls 1,  \
 
 
 set title 'Flugzeiten außerhalb einer Galaxie'
-set xrange [1:5000]
-set xtics 500
-set yrange [0:15]
+set xrange [1:2500]
+set xtics 250
+set yrange [0:10]
 set output 'flugzeiten-galaextern.png'
 
 plot t(x, 1, vmax_hyp, t_to_vmax_hyp, t_wu_hyp) t 'Hyp 100%' ls 7, \
@@ -144,10 +144,10 @@ plot verbrauch(x, 1, vmax_nuk, t_to_vmax_nuk, verbrauch_nuk_max, 0) t 'Nuk 100%'
      'verbrauch-galaintern.txt' using 1:7 t 'Ion 160% PHP' ls 6, \
      'verbrauch-galaintern.txt' using 1:8 t 'Hyp 100% PHP' ls 7
 
-set xrange [1:5000]
-set xtics 500
-set yrange [0:3000]
-set ytics 200
+set xrange [1:2500]
+set xtics 250
+set yrange [0:1500]
+set ytics 100
 set output 'verbrauch-galaextern.png'
 
 plot \

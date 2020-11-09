@@ -26,7 +26,7 @@ $data = fopen('../plots/flugzeiten-galaextern.txt', 'w');
 
 fwrite($data, "# Entfernung Hyp100 Hyp130 Hyp160 Gty100\n");
 
-for($entfernung = 1; $entfernung <=5000; $entfernung += 50) {
+for($entfernung = 1; $entfernung <=2500; $entfernung += 50) {
     $line = [$entfernung];
     array_push($line, \LW\Flotten\flugzeit($entfernung, 1, 'hyp')/3600);
     array_push($line, \LW\Flotten\flugzeit($entfernung, 1.3, 'hyp')/3600);
@@ -62,7 +62,7 @@ $data = fopen('../plots/verbrauch-galaextern.txt', 'w');
 
 fwrite($data, "# Entfernung Hyp100 Hyp130 Hyp160 Gty100\n");
 
-for($entfernung = 1; $entfernung <=5000; $entfernung += 50) {
+for($entfernung = 1; $entfernung <=2500; $entfernung += 50) {
     $line = [$entfernung];
     array_push($line, \LW\Flotten\verbrauch($entfernung, 1, 'hyp', 1000));
     array_push($line, \LW\Flotten\verbrauch($entfernung, 1.3, 'hyp', 1000));
