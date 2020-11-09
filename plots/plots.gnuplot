@@ -20,20 +20,20 @@ verbrauch(s, v_faktor, v_max, t_to_v_max, verbrauch_max, verbrauch_pro_su) = (s 
 vmax_nuk = 10
 t_to_vmax_nuk = 1
 t_wu_nuk = 1
-verbrauch_nuk_max = 50
+verbrauch_nuk_max = 20
 
 # Parameter für Ion-Antriebe
 vmax_ion = 25 
 t_to_vmax_ion = 2
 t_wu_ion = 2.5
-verbrauch_ion_max = 20 # Fruro pro 1000btns
+verbrauch_ion_max = 8 # Fruro pro 1000btns
 
 # Parameter für Hyp-Antriebe
 vmax_hyp = 500
 t_to_vmax_hyp = 0.125
 t_wu_hyp = 4.5
-verbrauch_hyp_max = 200 # Fruro pro 1000btns
-verbrauch_hyp_su = 0.25 # Fruro pro su pro 1000btns
+verbrauch_hyp_max = 100 # Fruro pro 1000btns
+verbrauch_hyp_su = 0.05 # Fruro pro su pro 1000btns
 
 set style line 1 lc rgb 'dark-red'
 set style line 2 lc rgb 'dark-red' dt 2
@@ -112,11 +112,11 @@ plot t(x, 1, vmax_hyp, t_to_vmax_hyp, t_wu_hyp) t 'Hyp 100%' ls 7, \
 set title 'Treibstoffverbrauch innerhalb einer Galaxie'
 set xrange [1:100]
 set xlabel 'Entfernung in su'
-set yrange [0:300]
+set yrange [0:150]
 set ylabel 'Treibstoffverbrauch in Frurozin pro 1000btns'
 set key center top
 set ytics 20
-set xtics 10
+set xtics 5
 set output 'verbrauch-galaintern.png'
 
 plot verbrauch(x, 1, vmax_nuk, t_to_vmax_nuk, verbrauch_nuk_max, 0) t 'Nuk 100%' ls 1,  \
@@ -147,15 +147,15 @@ plot verbrauch(x, 1, vmax_nuk, t_to_vmax_nuk, verbrauch_nuk_max, 0) t 'Nuk 100%'
 set title 'Treibstoffverbrauch außerhalb einer Galaxie'
 set xrange [1:2500]
 set xtics 250
-set yrange [0:1500]
-set ytics 100
+set yrange [0:500]
+set ytics 20
 set output 'verbrauch-galaextern.png'
 
 plot \
      verbrauch(x, 1, vmax_hyp, t_to_vmax_hyp, verbrauch_hyp_max, verbrauch_hyp_su) t 'Hyp 100%' ls 7, \
      verbrauch(x, 1.3, vmax_hyp, t_to_vmax_hyp, verbrauch_hyp_max, verbrauch_hyp_su) t 'Hyp 130%' ls 8, \
      verbrauch(x, 1.6, vmax_hyp, t_to_vmax_hyp, verbrauch_hyp_max, verbrauch_hyp_su) t 'Hyp 160%' ls 9, \
-     1000 t 'Gty' ls 10
+     200 t 'Gty' ls 10
 
 
 set output 'vergleich-verbrauch-galaextern.png'

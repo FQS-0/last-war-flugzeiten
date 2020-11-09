@@ -11,7 +11,7 @@ $config = [
                 'v_max' => 10 / 3600,
                 't_to_v_max' => 1 * 3600,
                 't_warmup' => 1 * 3600,
-                'verbrauch_max' => 50,
+                'verbrauch_max' => 20,
                 'verbrauch_pro_su' => 0
             ],
             'ion' => [
@@ -19,7 +19,7 @@ $config = [
                 'v_max' => 25 / 3600,
                 't_to_v_max' => 2 * 3600,
                 't_warmup' => 2.5 * 3600,
-                'verbrauch_max' => 20,
+                'verbrauch_max' => 8,
                 'verbrauch_pro_su' => 0
             ],
             'hyp' => [
@@ -27,13 +27,13 @@ $config = [
                 'v_max' => 500 / 3600,
                 't_to_v_max' => 0.125 * 3600,
                 't_warmup' => 4.5 * 3600,
-                'verbrauch_max' => 200,
-                'verbrauch_pro_su' => 0.25
+                'verbrauch_max' => 100,
+                'verbrauch_pro_su' => 0.05
             ],
             'gty' => [
                 'typ' => 'konstant',
                 't' => 4.5 * 3600,
-                'verbrauch' => 1000
+                'verbrauch' => 200
             ]
         ]
     ]
