@@ -144,6 +144,7 @@ plot verbrauch(x, 1, vmax_nuk, t_to_vmax_nuk, verbrauch_nuk_max, 0) t 'Nuk 100%'
      'verbrauch-galaintern.txt' using 1:7 t 'Ion 160% PHP' ls 6, \
      'verbrauch-galaintern.txt' using 1:8 t 'Hyp 100% PHP' ls 7
 
+set title 'Treibstoffverbrauch außerhalb einer Galaxie'
 set xrange [1:2500]
 set xtics 250
 set yrange [0:1500]
